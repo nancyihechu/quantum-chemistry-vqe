@@ -1,7 +1,8 @@
 #!/bin/bash
 # Run any pipeline script on a compute node.
 # Usage: sbatch scripts/slurm_job.sh scripts/run_sqd_sim.py n2_631g_8o --noisy
-#SBATCH --partition=general
+#SBATCH --partition=dkhf3-lab-gpu
+#SBATCH --account=dkhf3-lab
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=128G
 #SBATCH --time=24:00:00
