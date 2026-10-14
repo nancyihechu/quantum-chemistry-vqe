@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qchem-sqd"
+version = "0.1.0"
+description = "Sample-based quantum diagonalization and error-mitigated VQE benchmarks on IBM Nighthawk"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pyscf",
+    "ffsim",
+    "qiskit",
+    "qiskit-aer",
+    "qiskit-ibm-runtime",
+    "qiskit-addon-sqd",
+    "matplotlib",
+    "pandas",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
