@@ -1,0 +1,114 @@
+[
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 0.9,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.6793610453785,
+    "e_ccsd": -108.86340035113342,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -108.86830907691903,
+    "fci_seconds": 54.76965572500194
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 1.0,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.83523657077444,
+    "e_ccsd": -109.0398257972895,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -109.04667177831249,
+    "fci_seconds": 62.28257835799013
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 1.1,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.86761837305825,
+    "e_ccsd": -109.09392115436496,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -109.10336546389419,
+    "fci_seconds": 67.8423091959994
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 1.3,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.77348170673265,
+    "e_ccsd": -109.04765583164175,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -109.06479561361824,
+    "fci_seconds": 78.46696358900226
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 1.6,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.57175343627591,
+    "e_ccsd": -108.9155164807711,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -108.94225259380289,
+    "fci_seconds": 126.61570149099862
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 2.0,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.44833058728206,
+    "e_ccsd": -108.66513200392058,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -108.85968925556473,
+    "fci_seconds": 391.5592675090011
+  },
+  {
+    "system": "n2_631g_16o",
+    "bond_length": 2.4,
+    "norb": 16,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 32,
+    "e_rhf": -108.37399467402133,
+    "e_ccsd": -108.6238095754035,
+    "ccsd_converged": true,
+    "ccsd_level_shift": 0.0,
+    "e_fci": -108.84269271256967,
+    "fci_seconds": 853.6383803589997
+  }
+]
