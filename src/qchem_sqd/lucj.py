@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from typing import Literal
 
 import ffsim
+import numpy as np
+from pyscf import ao2mo
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.providers import BackendV2
 
@@ -34,6 +36,7 @@ def build_lucj(
     backend: BackendV2,
     connectivity: Connectivity,
     n_reps: int = 1,
+    optimize: bool = False,
     seed: int = 1234,
 ) -> LUCJCircuit:
     """Build the LUCJ circuit with the alpha-beta pairs the device layout can host.
@@ -55,10 +58,12 @@ def build_lucj(
         optimization_level=3,
         seed_transpiler=seed,
     )
-    # optimize=True compresses the full UCJ (from CCSD) into the local pair
-    # pattern; without it, truncated LUCJ samples barely leave Hartree-Fock.
+    # Plain truncation of the CCSD-derived UCJ keeps the state physical (energy
+    # between FCI and RHF). optimize=True fits the operator, not the energy: for
+    # N2 it yields large angles and states far above RHF, whose broader samples
+    # mimic random bitstrings. Keep it only as a labelled control.
     ucj_op = ffsim.UCJOpSpinBalanced.from_t_amplitudes(
-        data.ccsd_t2, t1=data.ccsd_t1, n_reps=n_reps, interaction_pairs=(pairs_aa, pairs_ab), optimize=True
+        data.ccsd_t2, t1=data.ccsd_t1, n_reps=n_reps, interaction_pairs=(pairs_aa, pairs_ab), optimize=optimize
     )
 
     qubits = QuantumRegister(2 * norb, name="q")
@@ -68,3 +73,17 @@ def build_lucj(
     circuit.measure_all()
 
     return LUCJCircuit(logical=circuit, isa=pass_manager.run(circuit), ucj_op=ucj_op, pairs_ab=pairs_ab)
+
+
+def ansatz_energy(data: ffsim.MolecularData, ucj_op: ffsim.UCJOpSpinBalanced) -> float:
+    """Exact energy of the noiseless LUCJ state; a physical ansatz lies between FCI and RHF."""
+    norb, nelec = data.norb, data.nelec
+    hamiltonian = ffsim.linear_operator(
+        ffsim.MolecularHamiltonian(
+            data.one_body_integrals, ao2mo.restore(1, data.two_body_integrals, norb), data.core_energy
+        ),
+        norb=norb,
+        nelec=nelec,
+    )
+    state = ffsim.apply_unitary(ffsim.hartree_fock_state(norb, nelec), ucj_op, norb=norb, nelec=nelec)
+    return float(np.vdot(state, hamiltonian @ state).real)

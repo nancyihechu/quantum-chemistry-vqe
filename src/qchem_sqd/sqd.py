@@ -13,8 +13,13 @@ def run_sqd(
     num_batches: int = 3,
     max_iterations: int = 5,
     seed: int = 24,
+    max_dim: int | None = None,
 ) -> dict:
-    """Configuration recovery + subspace diagonalization; returns total energies."""
+    """Configuration recovery + subspace diagonalization; returns total energies.
+
+    ``max_dim`` caps each spin sector (subspace <= max_dim**2), keeping carried-over
+    strings first and then the most frequently sampled ones.
+    """
     history = []
 
     def record_iteration(results):
@@ -30,6 +35,7 @@ def run_sqd(
         num_batches=num_batches,
         max_iterations=max_iterations,
         symmetrize_spin=True,
+        max_dim=max_dim,
         callback=record_iteration,
         seed=seed,
     )
@@ -39,6 +45,7 @@ def run_sqd(
         "energy_history": history,
         "samples_per_batch": samples_per_batch,
         "num_batches": num_batches,
+        "max_dim": max_dim,
     }
 
 
