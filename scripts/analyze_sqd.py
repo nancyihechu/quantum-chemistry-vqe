@@ -124,6 +124,8 @@ def analyze_manifest(manifest_path: Path, full: bool) -> None:
     grouped = defaultdict(lambda: defaultdict(list))  # r -> arm -> [(repeat, bits, meta)]
     for entry in manifest["jobs"]:
         for meta in entry["pubs"]:
+            if meta.get("system") != "n2_631g_16o":  # 52-qubit circuits are analyzed by analyze_ccpvdz.py
+                continue
             path = run_dir / f"{entry['name']}__{meta['label']}.npz"
             if path.exists():
                 z = np.load(path)

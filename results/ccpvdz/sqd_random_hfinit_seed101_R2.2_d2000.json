@@ -1,0 +1,33 @@
+{
+ "grid": 2.2,
+ "angstrom": 2.4145297,
+ "source": "random_hfinit_seed101",
+ "max_dim": 2000,
+ "d": 4000000,
+ "settings": {
+  "samples_per_batch": 1500,
+  "num_batches": 3,
+  "max_iterations": 5
+ },
+ "shots": 98304,
+ "initial_occupancies": "RHF",
+ "valid_fraction": 0.0,
+ "random_valid_fraction": 9.607888706852918e-07,
+ "e_hci": -108.94618072,
+ "error_vs_hci_mha": 26.35667239876227,
+ "error_vs_hci_by_round_mha": [
+  236.48641336110643,
+  76.29097733112644,
+  50.76059053708093,
+  32.919295156062844,
+  26.35667239876227
+ ],
+ "dim_by_round": [
+  4000000,
+  4000000,
+  4000000,
+  4000000,
+  4000000
+ ],
+ "seconds": 7929.008990523987
+}

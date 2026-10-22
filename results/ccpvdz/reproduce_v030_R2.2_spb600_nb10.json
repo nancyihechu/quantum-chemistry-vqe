@@ -1,0 +1,29 @@
+{
+ "qiskit_addon_sqd": "0.3.0",
+ "grid": 2.2,
+ "settings": {
+  "grid": 2.2,
+  "samples_per_batch": 600,
+  "num_batches": 10,
+  "iterations": 5,
+  "seed": 24
+ },
+ "e_hci": -108.94618072,
+ "error_vs_hci_mha": 213.8269337766019,
+ "error_vs_hci_by_iteration_mha": [
+  673.3299226677474,
+  343.71647115483484,
+  213.8269337766019,
+  342.24858079116416,
+  271.37124395649437
+ ],
+ "dim_by_iteration": [
+  77841,
+  988036,
+  1042441,
+  1089936,
+  1075369
+ ],
+ "published_error_vs_hci_mha": 201.84641313191776,
+ "seconds": 6404.9146332340315
+}

@@ -1,0 +1,19 @@
+{
+ "phoenix_shots": 1040000,
+ "kingston_shots": 100000,
+ "usage_per_shot_s": {
+  "ibm_phoenix": 2.8930817610062894e-05,
+  "ibm_kingston": 0.0003
+ },
+ "pilot_usage": {
+  "ibm_phoenix": {
+   "usage_s": 46.0,
+   "shots": 1590000
+  },
+  "ibm_kingston": {
+   "usage_s": 30.0,
+   "shots": 100000
+  }
+ },
+ "pilot_manifest": "results/hardware/pilot_20261022T1708Z/manifest.json"
+}

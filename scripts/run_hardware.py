@@ -151,7 +151,10 @@ def fetch(manifest_path: Path) -> None:
         if "DONE" not in status.upper():
             continue
         metrics = job.metrics()
-        entry["usage_seconds"] = (metrics.get("usage") or {}).get("seconds")
+        usage = metrics.get("usage") or {}
+        entry["usage_seconds"] = float(job.usage())  # IBM-reported usage, the quantity the budget is charged
+        entry["qpu_charge_time_seconds"] = usage.get("qpu_charge_time_seconds")
+        entry["circuits_execution_time_ns"] = metrics.get("circuits_execution_time_ns")
         entry["timestamps"] = metrics.get("timestamps")
         ran_at = (metrics.get("timestamps") or {}).get("running")
         backend = service.backend(entry["backend"])
