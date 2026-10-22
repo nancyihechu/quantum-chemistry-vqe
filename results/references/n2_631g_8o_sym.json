@@ -1,0 +1,98 @@
+[
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 1.0,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.83523657077453,
+    "e_ccsd": -108.90465095812782,
+    "ccsd_converged": true,
+    "ccsd_route": "cold",
+    "e_fci": -108.90593541556017,
+    "fci_seconds": 0.9963411439675838
+  },
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 1.2,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.83577420992911,
+    "e_ccsd": -108.95370990066621,
+    "ccsd_converged": true,
+    "ccsd_route": "cold",
+    "e_fci": -108.95706625331519,
+    "fci_seconds": 0.3891329700127244
+  },
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 1.6,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.55157114905404,
+    "e_ccsd": -108.80686101523233,
+    "ccsd_converged": true,
+    "ccsd_route": "cold",
+    "e_fci": -108.82051168073626,
+    "fci_seconds": 0.20366346603259444
+  },
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 1.8,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.42079877115471,
+    "e_ccsd": -108.76109511663164,
+    "ccsd_converged": true,
+    "ccsd_route": "cold",
+    "e_fci": -108.76813466199089,
+    "fci_seconds": 0.6011345039587468
+  },
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 2.0,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.30960085172106,
+    "e_ccsd": -108.78740561999948,
+    "ccsd_converged": true,
+    "ccsd_route": "cold",
+    "e_fci": -108.7422586100773,
+    "fci_seconds": 1.2656481850426644
+  },
+  {
+    "system": "n2_631g_8o",
+    "bond_length": 2.4,
+    "norb": 8,
+    "nelec": [
+      5,
+      5
+    ],
+    "n_qubits": 16,
+    "e_rhf": -108.1395271868459,
+    "e_ccsd": -108.86465456142717,
+    "ccsd_converged": true,
+    "ccsd_route": "continued",
+    "e_fci": -108.72894270645654,
+    "fci_seconds": 2.270240301033482
+  }
+]

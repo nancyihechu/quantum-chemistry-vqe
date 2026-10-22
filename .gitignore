@@ -2,3 +2,7 @@ __pycache__/
 *.egg-info/
 .ipynb_checkpoints/
 results/logs/
+slurm-*.out
+*.chk
+# Claude Code /export transcripts
+20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*.txt

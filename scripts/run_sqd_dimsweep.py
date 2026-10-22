@@ -7,13 +7,13 @@ question: per configuration kept, which source finds the better subspace?
 
 Sample sources (all noiseless, same shot count):
   random               uniform bitstrings (control)
-  square_r1            plain LUCJ, FakeMiami layout, 1 layer
-  heavyhex_r1          plain LUCJ, FakeFez layout, 1 layer
-  square_r2            plain LUCJ, FakeMiami layout, 2 layers
+  square_r1            plain LUCJ, ibm_phoenix layout, 1 layer
+  heavyhex_r1          plain LUCJ, ibm_kingston layout, 1 layer
+  square_r2            plain LUCJ, ibm_phoenix layout, 2 layers
   square_r1_optimized  ffsim optimize=True LUCJ (unphysical, labelled control)
 
 Usage: python scripts/run_sqd_dimsweep.py n2_631g_16o --shots 100000 --seeds 3
-Needs results/references/<system>.json (FCI). Writes results/sqd_dimsweep/<system>.json
+Needs results/references/<system>_sym.json (FCI). Writes results/sqd_dimsweep/<system>.json
 """
 
 import argparse
@@ -22,8 +22,8 @@ from pathlib import Path
 
 import ffsim
 from qiskit_addon_sqd.counts import generate_bit_array_uniform
-from qiskit_ibm_runtime.fake_provider import FakeFez, FakeMiami
 
+from qchem_sqd.backends import offline_backend
 from qchem_sqd.lucj import ansatz_energy, build_lucj
 from qchem_sqd.molecules import SYSTEMS
 from qchem_sqd.reference import reference_energies
@@ -42,14 +42,14 @@ def main() -> None:
     args = parser.parse_args()
 
     system = SYSTEMS[args.system]
-    references = json.loads((RESULTS / "references" / f"{args.system}.json").read_text())
+    references = json.loads((RESULTS / "references" / f"{args.system}_sym.json").read_text())
     fci = {rec["bond_length"]: rec["e_fci"] for rec in references}
-    miami, fez = FakeMiami(), FakeFez()
+    square, heavy_hex = offline_backend("ibm_phoenix"), offline_backend("ibm_kingston")
     circuit_sources = {
-        "square_r1": dict(backend=miami, connectivity="square", n_reps=1),
-        "heavyhex_r1": dict(backend=fez, connectivity="heavy-hex", n_reps=1),
-        "square_r2": dict(backend=miami, connectivity="square", n_reps=2),
-        "square_r1_optimized": dict(backend=miami, connectivity="square", n_reps=1, optimize=True),
+        "square_r1": dict(backend=square, connectivity="square", n_reps=1),
+        "heavyhex_r1": dict(backend=heavy_hex, connectivity="heavy-hex", n_reps=1),
+        "square_r2": dict(backend=square, connectivity="square", n_reps=2),
+        "square_r1_optimized": dict(backend=square, connectivity="square", n_reps=1, optimize=True),
     }
 
     records = []

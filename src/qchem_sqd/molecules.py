@@ -38,12 +38,14 @@ SYSTEMS = {
 }
 
 
-def build_molecule(system: System, bond_length: float) -> gto.Mole:
+def build_molecule(system: System, bond_length: float, symmetry: bool = True) -> gto.Mole:
+    """Diatomic along z. With symmetry, pyscf uses the largest abelian subgroup
+    (D2h for N2, C2v for LiH) and returns symmetry-adapted molecular orbitals."""
     return gto.M(
         atom=[[system.atom_a, (0.0, 0.0, 0.0)], [system.atom_b, (0.0, 0.0, bond_length)]],
         basis=system.basis,
         unit="Angstrom",
-        symmetry=False,
+        symmetry=symmetry,
         verbose=0,
     )
 
@@ -67,9 +69,11 @@ def active_orbitals(system: System, mol: gto.Mole) -> list[int]:
     return list(range(system.n_frozen, stop))
 
 
-def molecular_data(system: System, bond_length: float) -> tuple[ffsim.MolecularData, scf.hf.RHF]:
+def molecular_data(
+    system: System, bond_length: float, symmetry: bool = True
+) -> tuple[ffsim.MolecularData, scf.hf.RHF]:
     """Active-space Hamiltonian (one- and two-body tensors plus core energy)."""
-    mol = build_molecule(system, bond_length)
+    mol = build_molecule(system, bond_length, symmetry=symmetry)
     mf = run_rhf(mol)
     data = ffsim.MolecularData.from_scf(mf, active_space=active_orbitals(system, mol))
     return data, mf

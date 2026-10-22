@@ -1,0 +1,74 @@
+[
+ {
+  "backend": "ibm_phoenix",
+  "bond_length": 1.0,
+  "aer_valid": 0.6462,
+  "aer_std": 0.006762034605057859,
+  "model_valid": 0.6324519591639314,
+  "ratio": 0.9787247897925276,
+  "model_valid_with_idle": 0.45830431819798767,
+  "2q": 176,
+  "1q": 456,
+  "measure": 16
+ },
+ {
+  "backend": "ibm_phoenix",
+  "bond_length": 2.4,
+  "aer_valid": 0.667,
+  "aer_std": 0.006664998124530868,
+  "model_valid": 0.6451952223046096,
+  "ratio": 0.9673091788674806,
+  "model_valid_with_idle": 0.46844586412939654,
+  "2q": 168,
+  "1q": 431,
+  "measure": 16
+ },
+ {
+  "backend": "ibm_kingston",
+  "bond_length": 1.0,
+  "aer_valid": 0.557,
+  "aer_std": 0.007024969750824554,
+  "model_valid": 0.5379048446604029,
+  "ratio": 0.9657178539684073,
+  "model_valid_with_idle": 0.4196924948662496,
+  "2q": 172,
+  "1q": 461,
+  "measure": 16
+ },
+ {
+  "backend": "ibm_kingston",
+  "bond_length": 2.4,
+  "aer_valid": 0.5864,
+  "aer_std": 0.006964697265495465,
+  "model_valid": 0.5504853257049949,
+  "ratio": 0.9387539660726378,
+  "model_valid_with_idle": 0.4300672817204279,
+  "2q": 164,
+  "1q": 433,
+  "measure": 16
+ },
+ {
+  "backend": "ibm_fez",
+  "bond_length": 1.0,
+  "aer_valid": 0.5368,
+  "aer_std": 0.007051889959436407,
+  "model_valid": 0.5032399711168233,
+  "ratio": 0.9374813172817125,
+  "model_valid_with_idle": 0.33814654207101463,
+  "2q": 172,
+  "1q": 462,
+  "measure": 16
+ },
+ {
+  "backend": "ibm_fez",
+  "bond_length": 2.4,
+  "aer_valid": 0.5448,
+  "aer_std": 0.007042626782671363,
+  "model_valid": 0.5174117896567321,
+  "ratio": 0.9497279545828416,
+  "model_valid_with_idle": 0.3476691390608623,
+  "2q": 164,
+  "1q": 440,
+  "measure": 16
+ }
+]

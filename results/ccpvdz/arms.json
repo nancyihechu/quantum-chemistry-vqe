@@ -1,0 +1,269 @@
+{
+ "snapshots": {
+  "ibm_phoenix": "/cluster/pixstor/dkhf3-lab/users/nancy/GITHUB/quantum-chemistry-vqe/results/backends/ibm_phoenix_20261021T1336Z",
+  "ibm_kingston": "/cluster/pixstor/dkhf3-lab/users/nancy/GITHUB/quantum-chemistry-vqe/results/backends/ibm_kingston_20261021T1336Z"
+ },
+ "grid": {
+  "1.0": {
+   "angstrom": 1.0975135,
+   "e_ccsd": -109.26337534926421,
+   "ccsd_converged": true,
+   "ccsd_route": "cold",
+   "e_rhf": -108.95415347171252,
+   "fock_offdiag_occ_virt": 7.849193706804813e-07,
+   "e_hci": -109.27018733,
+   "phoenix_square_pairs_fit": 12,
+   "arms": {
+    "phoenix_square": {
+     "n_pairs_ab": 12,
+     "isa_depth": 431,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1646,
+     "isa_duration_us": 15.451999999999959,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "effective_pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "valid_fraction_model": 0.001060218168097898,
+     "valid_fraction_model_no_idle": 0.01288354968774897,
+     "e_ansatz": null
+    },
+    "phoenix_hhpattern": {
+     "n_pairs_ab": 3,
+     "isa_depth": 431,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1640,
+     "isa_duration_us": 15.451999999999959,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.001086597730784459,
+     "valid_fraction_model_no_idle": 0.013204108622541733,
+     "e_ansatz": null
+    },
+    "kingston_heavyhex": {
+     "n_pairs_ab": 3,
+     "isa_depth": 426,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1652,
+     "isa_duration_us": 14.21200000000004,
+     "isa_qubits_used": 54,
+     "auxiliary_qubits": 2,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.0014652482603434702,
+     "valid_fraction_model_no_idle": 0.007399952831359151,
+     "e_ansatz": null
+    }
+   }
+  },
+  "1.5": {
+   "angstrom": 1.6462702500000002,
+   "e_ccsd": -109.01234468263594,
+   "ccsd_converged": true,
+   "ccsd_route": "cold",
+   "e_rhf": -108.5605748072625,
+   "fock_offdiag_occ_virt": 5.699913115941868e-07,
+   "e_hci": -109.05298919,
+   "phoenix_square_pairs_fit": 12,
+   "arms": {
+    "phoenix_square": {
+     "n_pairs_ab": 12,
+     "isa_depth": 425,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1590,
+     "isa_duration_us": 15.339999999999964,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "effective_pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "valid_fraction_model": 0.001249619654156295,
+     "valid_fraction_model_no_idle": 0.01492186897013279,
+     "e_ansatz": null
+    },
+    "phoenix_hhpattern": {
+     "n_pairs_ab": 3,
+     "isa_depth": 425,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1584,
+     "isa_duration_us": 15.339999999999964,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.0012807117642455951,
+     "valid_fraction_model_no_idle": 0.015293143854626124,
+     "e_ansatz": null
+    },
+    "kingston_heavyhex": {
+     "n_pairs_ab": 3,
+     "isa_depth": 419,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1596,
+     "isa_duration_us": 14.116000000000039,
+     "isa_qubits_used": 54,
+     "auxiliary_qubits": 2,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.001756392391327314,
+     "valid_fraction_model_no_idle": 0.008775765195126182,
+     "e_ansatz": null
+    }
+   }
+  },
+  "2.2": {
+   "angstrom": 2.4145297,
+   "e_ccsd": -108.9569739638946,
+   "ccsd_converged": true,
+   "ccsd_route": "cold",
+   "e_rhf": -108.1483836661309,
+   "fock_offdiag_occ_virt": 7.345120772161984e-07,
+   "e_hci": -108.94618072,
+   "phoenix_square_pairs_fit": 12,
+   "arms": {
+    "phoenix_square": {
+     "n_pairs_ab": 12,
+     "isa_depth": 427,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1578,
+     "isa_duration_us": 15.379999999999965,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "effective_pairs_ab": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "valid_fraction_model": 0.00128471510853894,
+     "valid_fraction_model_no_idle": 0.015437078801441965,
+     "e_ansatz": null
+    },
+    "phoenix_hhpattern": {
+     "n_pairs_ab": 3,
+     "isa_depth": 427,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1572,
+     "isa_duration_us": 15.379999999999965,
+     "isa_qubits_used": 52,
+     "auxiliary_qubits": 0,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.0013166804377134805,
+     "valid_fraction_model_no_idle": 0.015821172755114382,
+     "e_ansatz": null
+    },
+    "kingston_heavyhex": {
+     "n_pairs_ab": 3,
+     "isa_depth": 422,
+     "isa_2q_depth": 104,
+     "isa_2q_count": 1584,
+     "isa_duration_us": 14.212000000000039,
+     "isa_qubits_used": 54,
+     "auxiliary_qubits": 2,
+     "pairs_ab": [
+      0,
+      4,
+      8
+     ],
+     "effective_pairs_ab": [
+      0,
+      4
+     ],
+     "valid_fraction_model": 0.0017460593930624575,
+     "valid_fraction_model_no_idle": 0.008818135123658154,
+     "e_ansatz": null
+    }
+   }
+  }
+ }
+}

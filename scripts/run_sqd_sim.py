@@ -1,15 +1,15 @@
 """SQD bond-length scan on simulators, to validate the pipeline before using QPU time.
 
-For every geometry: build the LUCJ circuit for FakeMiami (square) and FakeFez
-(heavy-hex), record circuit metrics, then for each seed run SQD on
+For every geometry: build the LUCJ circuit for ibm_phoenix (square) and ibm_kingston
+(heavy-hex) from saved calibration snapshots, record circuit metrics, then for each seed run SQD on
   - ideal samples of the LUCJ circuit (ffsim),
-  - noisy samples from the FakeMiami noise model (Aer, square layout only, --noisy),
+  - noisy samples from the ibm_phoenix and ibm_kingston noise models (Aer, --noisy),
   - uniformly random bitstrings with the same shot count (control).
 If the random control matches the circuit samples, the active space is too
 small for SQD to say anything about sample quality.
 
 Usage: python scripts/run_sqd_sim.py n2_631g_8o --shots 20000 --seeds 5 [--noisy]
-Reuses FCI energies from results/references/<system>.json when present.
+Reuses FCI energies from results/references/<system>_sym.json when present.
 Writes results/sqd_sim/<system>[_noisy].json
 """
 
@@ -22,8 +22,8 @@ import ffsim
 from qiskit_addon_sqd.counts import generate_bit_array_uniform
 from qiskit_aer import AerSimulator
 from qiskit_aer.primitives import SamplerV2 as AerSampler
-from qiskit_ibm_runtime.fake_provider import FakeFez, FakeMiami
 
+from qchem_sqd.backends import offline_backend
 from qchem_sqd.lucj import build_lucj
 from qchem_sqd.molecules import SYSTEMS
 from qchem_sqd.reference import reference_energies
@@ -44,17 +44,16 @@ def main() -> None:
     parser.add_argument("system")
     parser.add_argument("--shots", type=int, default=20000)
     parser.add_argument("--seeds", type=int, default=5)
-    parser.add_argument("--noisy", action="store_true", help="also sample with the FakeMiami noise model")
+    parser.add_argument("--noisy", action="store_true", help="also sample with the device noise models")
     args = parser.parse_args()
 
     system = SYSTEMS[args.system]
-    reference_file = RESULTS / "references" / f"{args.system}.json"
+    reference_file = RESULTS / "references" / f"{args.system}_sym.json"
     saved_fci = {}
     if reference_file.exists():
         saved_fci = {rec["bond_length"]: rec["e_fci"] for rec in json.loads(reference_file.read_text())}
 
-    miami, fez = FakeMiami(), FakeFez()
-    noisy_sim = AerSimulator.from_backend(miami) if args.noisy else None
+    devices = ((offline_backend("ibm_phoenix"), "square"), (offline_backend("ibm_kingston"), "heavy-hex"))
 
     records = []
     for r in system.bond_lengths:
@@ -68,7 +67,7 @@ def main() -> None:
         ]
 
         record["layouts"] = {}
-        for backend, connectivity in ((miami, "square"), (fez, "heavy-hex")):
+        for backend, connectivity in devices:
             t0 = time.perf_counter()
             lucj = build_lucj(data, backend, connectivity)
             layout = record["layouts"][backend.name] = lucj.metrics()
@@ -80,7 +79,8 @@ def main() -> None:
                 bits = sampler.run([lucj.logical]).result()[0].data.meas
                 layout["ideal"].append(sqd_record(data, bits, seed))
 
-            if noisy_sim is not None and backend is miami:
+            if args.noisy:
+                noisy_sim = AerSimulator.from_backend(backend)
                 layout["noisy"] = []
                 for seed in range(args.seeds):
                     t0 = time.perf_counter()

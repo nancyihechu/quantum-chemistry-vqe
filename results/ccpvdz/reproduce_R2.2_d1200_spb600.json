@@ -1,0 +1,34 @@
+{
+ "grid": 2.2,
+ "angstrom": 2.4145297,
+ "max_dim": 1200,
+ "settings": {
+  "samples_per_batch": 600,
+  "num_batches": 3,
+  "max_iterations": 5
+ },
+ "shots": 98304,
+ "valid_fraction": 0.0014750162760416667,
+ "random_valid_fraction": 9.607888706852918e-07,
+ "e_hci": -108.94618072,
+ "e_sqd": -108.85753573829615,
+ "error_vs_hci_mha": 88.64498170385104,
+ "error_vs_hci_by_round_mha": [
+  673.3241155713614,
+  365.5974296098208,
+  139.68959980441298,
+  103.57014265329667,
+  88.64498170385104
+ ],
+ "dim_by_round": [
+  77841,
+  1089936,
+  1352569,
+  1440000,
+  1440000
+ ],
+ "published_sqd": -108.74433430686808,
+ "published_error_vs_hci_mha": 201.84641313191776,
+ "ours_minus_published_mha": -113.20143142806671,
+ "seconds": 1257.983473471948
+}
