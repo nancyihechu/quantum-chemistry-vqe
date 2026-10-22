@@ -21,7 +21,11 @@ Usage: python scripts/run_hardware.py plan --what study
        python scripts/run_hardware.py fetch results/hardware/pilot_<time>/manifest.json
 """
 
-import argparse
+from qchem_sqd.repro import pin_threads
+
+pin_threads(1)  # builds must match the frozen design: CCSD convergence paths are thread-dependent
+
+import argparse  # noqa: E402
 import json
 from datetime import datetime, timezone
 from pathlib import Path

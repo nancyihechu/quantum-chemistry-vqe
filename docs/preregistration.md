@@ -35,7 +35,7 @@ Frozen by the git commit that adds this version, before any hardware job (pilot 
 | Matched-shot subsampling | n/a | numpy default_rng(7), without replacement |
 | HCI | pyscf selected_ci, select_cutoff 1e-4, ci_coeff_cutoff 1e-4, conv_tol 1e-8 | the repository's HCI energy |
 | Exact reference | pyscf direct_spin1 FCI, conv_tol 1e-10 | the repository's HCI energy |
-| Threads | results are thread-count independent except optimize=True, which was frozen on 1 thread | same |
+| Threads | circuit builds and the frozen design use 1 thread (optimize=True angles and the 2.4 A CCSD convergence path are thread-dependent; see Deviation 1) | same |
 
 ## System 1: N2/6-31G, 16 active orbitals, 32 qubits
 
@@ -101,4 +101,4 @@ Noise-model check: at 16 qubits the gate-and-readout model agrees with exact Aer
 
 ## Deviations
 
-None yet.
+1. 2026-10-22, before any study job was submitted (no study data existed). The first study-day-1 build stopped on the built-in guard "CCSD route changed since the design was frozen" at 2.4 A. Cause: with more than one thread the failed cold-start CCSD at 2.4 A ends in a thread-dependent state (three runs at 2 threads: -108.536, -108.502, -108.490 Ha), so the continuation can occasionally fail and fall back to a level-shifted route. With 1 thread the path is identical on every run and the continued solution equals the frozen one (-108.955193504 Ha). Change: all circuit builds (`run_hardware.py`) now pin threads to 1, the setting used to freeze the design. The frozen design, circuits and analysis are unchanged; the statement under Analysis settings that results are thread-count independent is corrected accordingly.
