@@ -93,12 +93,16 @@ System 2: noiseless sampling of the 52-qubit state is not feasible (4.3e9 amplit
 |---|---|---|---|---|---|---|
 | 1.0 | 0.106% | 0.109% | 0.147% | 64 | 5.5 | 21.1 / 10.8 |
 | 1.5 | 0.125% | 0.128% | 0.176% | 76 | 6.7 | 36.4 / 34.9 |
-| 2.2 | 0.128% | 0.132% | 0.175% | 78 | 6.6 | 75.9 / pending (a) |
+| 2.2 | 0.128% | 0.132% | 0.175% | 78 | 6.6 | 75.9 / 43.0 (a) |
 
-(a) Computed from the published torino shots by job 19206070, still running at freeze time; it uses no hardware data of ours and will be added under Deviations as an addendum, with no other change.
+(a) Computed from the published torino shots by job 19206070, still running at freeze time; it uses no hardware data of ours. Value filled in on 2026-10-23 (Addendum A), with no other change.
 
 Noise-model check: at 16 qubits the gate-and-readout model agrees with exact Aer noisy sampling within 2 to 6% on phoenix, kingston and fez (`results/checks/noise_model_validation.json`). The idle-decay term cannot be checked against Aer and is the largest source of uncertainty in these valid fractions.
 
 ## Deviations
 
 1. 2026-10-22, before any study job was submitted (no study data existed). The first study-day-1 build stopped on the built-in guard "CCSD route changed since the design was frozen" at 2.4 A. Cause: with more than one thread the failed cold-start CCSD at 2.4 A ends in a thread-dependent state (three runs at 2 threads: -108.536, -108.502, -108.490 Ha), so the continuation can occasionally fail and fall back to a level-shifted route. With 1 thread the path is identical on every run and the continued solution equals the frozen one (-108.955193504 Ha). Change: all circuit builds (`run_hardware.py`) now pin threads to 1, the setting used to freeze the design. The frozen design, circuits and analysis are unchanged; the statement under Analysis settings that results are thread-count independent is corrected accordingly.
+
+2. 2026-10-23. Study day 1 was submitted as one session on 2026-10-22 (21:26 UTC). The ibm_kingston jobs ran immediately (21:26 to 21:33 UTC, 2026-10-22), but the ibm_phoenix jobs waited in the device queue and ran at 05:33 UTC on 2026-10-23, about 8 hours later and on the next calendar day. Consequences: within-phoenix comparisons (H1, H5; arms interleaved in each job) are unaffected; phoenix versus kingston comparisons (H3, H4, B versus D) use data from different calibration windows, which is reported alongside those results. Repeats 4 and 5 will be submitted no earlier than 2026-10-24 so that they fall on a day distinct from both day-1 execution dates. No analysis setting changes. Usage matching held: 52-qubit usage per circuit was 28.0 s on phoenix and 28.3 s on kingston (ratio 0.99).
+
+Addendum A (2026-10-23): torino reference through our pipeline at grid 2.2, d = 4M = 43.0 mHa above the repository HCI energy (job 19206070). Fills footnote (a); no other change.

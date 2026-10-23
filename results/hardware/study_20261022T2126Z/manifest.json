@@ -1,0 +1,7137 @@
+{
+  "what": "study",
+  "instance": "Ligand Based Drug Discovery",
+  "submitted_utc": "20261022T2126Z",
+  "estimate_s": 956.8636799999992,
+  "repeats": [
+    1,
+    2,
+    3
+  ],
+  "design_file": "/cluster/pixstor/dkhf3-lab/users/nancy/GITHUB/quantum-chemistry-vqe/results/hardware/design_frozen.json",
+  "snapshots_at_submit": {
+    "ibm_phoenix": "/cluster/pixstor/dkhf3-lab/users/nancy/GITHUB/quantum-chemistry-vqe/results/hardware/study_20261022T2126Z/calibration/ibm_phoenix_20261022T2126Z",
+    "ibm_kingston": "/cluster/pixstor/dkhf3-lab/users/nancy/GITHUB/quantum-chemistry-vqe/results/hardware/study_20261022T2126Z/calibration/ibm_kingston_20261022T2126Z"
+  },
+  "jobs": [
+    {
+      "name": "phoenix_rep1",
+      "job_id": "dbd7v0pgv2cc738hiecg",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "phoenix_square_R1.0",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85716672992018,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 285,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 712,
+          "isa_duration_us": 11.075999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.0",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 704,
+          "isa_duration_us": 10.779999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.0",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.87298835745838,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 350,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.54399999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.2",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.86379842538217,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 282,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.035999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.2",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.739999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.2",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8847239467263,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 344,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.41199999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.8",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.48350452998638,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 286,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.067999999999973,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.8",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.771999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R2.4",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.26744258041873,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R2.4",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 718,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        }
+      ],
+      "usage_seconds": 24.0,
+      "qpu_charge_time_seconds": 24,
+      "circuits_execution_time_ns": 20097336576,
+      "timestamps": {
+        "created": "2026-10-22T21:26:28.100578Z",
+        "finished": "2026-10-23T05:34:05.729289Z",
+        "running": "2026-10-23T05:32:57.76169Z"
+      }
+    },
+    {
+      "name": "kingston_rep1",
+      "job_id": "dbd7v2ni0auc7394t4og",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston_heavyhex_R1.0",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 274,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 716,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.2",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.73199999999999,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.8",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.795999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R2.4",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 33
+        }
+      ],
+      "usage_seconds": 110.0,
+      "qpu_charge_time_seconds": 110,
+      "circuits_execution_time_ns": 107894130432,
+      "timestamps": {
+        "created": "2026-10-22T21:26:34.650735Z",
+        "finished": "2026-10-22T21:28:49.251163Z",
+        "running": "2026-10-22T21:26:36.276039Z"
+      }
+    },
+    {
+      "name": "phoenix_rep2",
+      "job_id": "dbd7v6c24mrc73ckumeg",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "phoenix_square_R1.0",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85716672992018,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 285,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 712,
+          "isa_duration_us": 11.075999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.0",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 704,
+          "isa_duration_us": 10.779999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.0",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.87298835745838,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 350,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.54399999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.2",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.86379842538217,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 282,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.035999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.2",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.739999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.2",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8847239467263,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 344,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.41199999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.8",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.48350452998638,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 286,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.067999999999973,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.8",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.771999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R2.4",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.26744258041873,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R2.4",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 718,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        }
+      ],
+      "usage_seconds": 24.0,
+      "qpu_charge_time_seconds": 24,
+      "circuits_execution_time_ns": 20097336320,
+      "timestamps": {
+        "created": "2026-10-22T21:26:49.686598Z",
+        "finished": "2026-10-23T05:34:31.592273Z",
+        "running": "2026-10-23T05:32:59.381233Z"
+      }
+    },
+    {
+      "name": "kingston_rep2",
+      "job_id": "dbd7v7pgv2cc738hiem0",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston_heavyhex_R1.0",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 274,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 716,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.2",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.73199999999999,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.8",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.795999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R2.4",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 33
+        }
+      ],
+      "usage_seconds": 110.0,
+      "qpu_charge_time_seconds": 110,
+      "circuits_execution_time_ns": 107894130176,
+      "timestamps": {
+        "created": "2026-10-22T21:26:56.097381Z",
+        "finished": "2026-10-22T21:30:39.927719Z",
+        "running": "2026-10-22T21:26:57.122085Z"
+      }
+    },
+    {
+      "name": "phoenix_rep3",
+      "job_id": "dbd7vbni0auc7394t53g",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "phoenix_square_R1.0",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85716672992018,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 285,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 712,
+          "isa_duration_us": 11.075999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.0",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 704,
+          "isa_duration_us": 10.779999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.0",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.87298835745838,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 350,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.54399999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.2",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.86379842538217,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 282,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.035999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.2",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.739999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_opt_R1.2",
+          "arm": "phoenix_square_opt",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8847239467263,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            102,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 344,
+          "isa_2q_depth": 67,
+          "isa_2q_count": 778,
+          "isa_duration_us": 12.41199999999997,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R1.8",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.48350452998638,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 286,
+          "isa_2q_depth": 66,
+          "isa_2q_count": 704,
+          "isa_duration_us": 11.067999999999973,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R1.8",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 277,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 696,
+          "isa_duration_us": 10.771999999999975,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_square_R2.4",
+          "arm": "phoenix_square",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.26744258041873,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11
+          ],
+          "n_pairs_ab": 12,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        },
+        {
+          "label": "phoenix_hhpattern_R2.4",
+          "arm": "phoenix_hhpattern",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            114,
+            104,
+            94,
+            84,
+            74,
+            64,
+            65,
+            75,
+            85,
+            86,
+            76,
+            66,
+            67,
+            68,
+            69,
+            79,
+            113,
+            103,
+            93,
+            83,
+            73,
+            63,
+            53,
+            43,
+            44,
+            45,
+            46,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 275,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 718,
+          "isa_duration_us": 10.731999999999976,
+          "isa_qubits_used": 32
+        }
+      ],
+      "usage_seconds": 24.0,
+      "qpu_charge_time_seconds": 24,
+      "circuits_execution_time_ns": 20097336576,
+      "timestamps": {
+        "created": "2026-10-22T21:27:11.047991Z",
+        "finished": "2026-10-23T05:35:45.377369Z",
+        "running": "2026-10-23T05:33:00.899662Z"
+      }
+    },
+    {
+      "name": "kingston_rep3",
+      "job_id": "dbd7vdfi0auc7394t56g",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston_heavyhex_R1.0",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.0,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.04667177831101,
+          "e_rhf": -108.83523657077441,
+          "e_ccsd": -109.03982579727493,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.8526944957627,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 274,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 716,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.2",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.2,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -109.09813082053797,
+          "e_rhf": -108.83577420992908,
+          "e_ccsd": -109.08528585901387,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.85794067127449,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.73199999999999,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R1.8",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 1.8,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.8880340643992,
+          "e_rhf": -108.42079877115462,
+          "e_ccsd": -108.85293301949307,
+          "ccsd_route": "cold",
+          "e_ansatz": -108.47070159698144,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 276,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 708,
+          "isa_duration_us": 9.795999999999992,
+          "isa_qubits_used": 34
+        },
+        {
+          "label": "kingston_heavyhex_R2.4",
+          "arm": "kingston_heavyhex",
+          "system": "n2_631g_16o",
+          "bond_length": 2.4,
+          "norb": 16,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_fci": -108.84268347918288,
+          "e_rhf": -108.13952718684581,
+          "e_ccsd": -108.95519350442036,
+          "ccsd_route": "continued",
+          "e_ansatz": -108.254382987978,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "n_pairs_ab": 3,
+          "isa_depth": 272,
+          "isa_2q_depth": 64,
+          "isa_2q_count": 724,
+          "isa_duration_us": 9.763999999999992,
+          "isa_qubits_used": 33
+        }
+      ],
+      "usage_seconds": 110.0,
+      "qpu_charge_time_seconds": 110,
+      "circuits_execution_time_ns": 107894130432,
+      "timestamps": {
+        "created": "2026-10-22T21:27:17.930575Z",
+        "finished": "2026-10-22T21:32:28.305157Z",
+        "running": "2026-10-22T21:27:19.050732Z"
+      }
+    },
+    {
+      "name": "phoenix52_rep1",
+      "job_id": "dbd7vini0auc7394t5hg",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 1040000
+      },
+      "pubs": [
+        {
+          "label": "phoenix52_square_G1.0",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1618,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007642897827897466
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.0",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1612,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007847670144815683
+        },
+        {
+          "label": "phoenix52_square_G1.5",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1638,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.000709590047510179
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.5",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1632,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007284065428647643
+        },
+        {
+          "label": "phoenix52_square_G2.2",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1610,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007697732745860825
+        },
+        {
+          "label": "phoenix52_hhpattern_G2.2",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1604,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007903974227152647
+        }
+      ],
+      "usage_seconds": 168.0,
+      "qpu_charge_time_seconds": 168,
+      "circuits_execution_time_ns": 164504814848,
+      "timestamps": {
+        "created": "2026-10-22T21:27:39.130398Z",
+        "finished": "2026-10-23T05:49:37.539827Z",
+        "running": "2026-10-23T05:33:13.606575Z"
+      }
+    },
+    {
+      "name": "kingston52_rep1",
+      "job_id": "dbd7vl9gv2cc738hifg0",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston52_heavyhex_G1.0",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1624,
+          "isa_duration_us": 14.14800000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0019722926478112223
+        },
+        {
+          "label": "kingston52_heavyhex_G1.5",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1644,
+          "isa_duration_us": 14.180000000000039,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0018118364676007787
+        },
+        {
+          "label": "kingston52_heavyhex_G2.2",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 422,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1616,
+          "isa_duration_us": 14.18000000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.001933345640941901
+        }
+      ],
+      "usage_seconds": 85.0,
+      "qpu_charge_time_seconds": 85,
+      "circuits_execution_time_ns": 82504525056,
+      "timestamps": {
+        "created": "2026-10-22T21:27:49.998966Z",
+        "finished": "2026-10-22T21:34:00.202351Z",
+        "running": "2026-10-22T21:29:03.902614Z"
+      }
+    },
+    {
+      "name": "phoenix52_rep2",
+      "job_id": "dbd7vqhgv2cc738hifq0",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 1040000
+      },
+      "pubs": [
+        {
+          "label": "phoenix52_square_G1.0",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1618,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007642897827897466
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.0",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1612,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007847670144815683
+        },
+        {
+          "label": "phoenix52_square_G1.5",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1638,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.000709590047510179
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.5",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1632,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007284065428647643
+        },
+        {
+          "label": "phoenix52_square_G2.2",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1610,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007697732745860825
+        },
+        {
+          "label": "phoenix52_hhpattern_G2.2",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1604,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007903974227152647
+        }
+      ],
+      "usage_seconds": 168.0,
+      "qpu_charge_time_seconds": 168,
+      "circuits_execution_time_ns": 164504814848,
+      "timestamps": {
+        "created": "2026-10-22T21:28:11.460567Z",
+        "finished": "2026-10-23T05:57:34.5002Z",
+        "running": "2026-10-23T05:33:19.903305Z"
+      }
+    },
+    {
+      "name": "kingston52_rep2",
+      "job_id": "dbd7vtk24mrc73ckunqg",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston52_heavyhex_G1.0",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1624,
+          "isa_duration_us": 14.14800000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0019722926478112223
+        },
+        {
+          "label": "kingston52_heavyhex_G1.5",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1644,
+          "isa_duration_us": 14.180000000000039,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0018118364676007787
+        },
+        {
+          "label": "kingston52_heavyhex_G2.2",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 422,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1616,
+          "isa_duration_us": 14.18000000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.001933345640941901
+        }
+      ],
+      "usage_seconds": 85.0,
+      "qpu_charge_time_seconds": 85,
+      "circuits_execution_time_ns": 82504525056,
+      "timestamps": {
+        "created": "2026-10-22T21:28:22.764625Z",
+        "finished": "2026-10-22T21:35:24.004467Z",
+        "running": "2026-10-22T21:30:41.734528Z"
+      }
+    },
+    {
+      "name": "phoenix52_rep3",
+      "job_id": "dbd802s24mrc73ckuo4g",
+      "backend": "ibm_phoenix",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 1040000
+      },
+      "pubs": [
+        {
+          "label": "phoenix52_square_G1.0",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1618,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007642897827897466
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.0",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1612,
+          "isa_duration_us": 15.539999999999964,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007847670144815683
+        },
+        {
+          "label": "phoenix52_square_G1.5",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1638,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.000709590047510179
+        },
+        {
+          "label": "phoenix52_hhpattern_G1.5",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 433,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1632,
+          "isa_duration_us": 15.611999999999956,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38,
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007284065428647643
+        },
+        {
+          "label": "phoenix52_square_G2.2",
+          "arm": "phoenix52_square",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 12,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1610,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "valid_fraction_model": 0.0007697732745860825
+        },
+        {
+          "label": "phoenix52_hhpattern_G2.2",
+          "arm": "phoenix52_hhpattern",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 435,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1604,
+          "isa_duration_us": 15.659999999999961,
+          "isa_qubits_used": 52,
+          "auxiliary_qubits": 0,
+          "physical_qubits": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63,
+            73,
+            83,
+            93,
+            103,
+            113,
+            112,
+            111,
+            101,
+            91,
+            92,
+            82,
+            72,
+            71,
+            61,
+            51,
+            50,
+            40,
+            30,
+            31,
+            4,
+            14,
+            24,
+            34,
+            44,
+            54,
+            64,
+            74,
+            84,
+            94,
+            104,
+            114,
+            115,
+            105,
+            95,
+            85,
+            86,
+            76,
+            75,
+            65,
+            66,
+            56,
+            57,
+            58,
+            48,
+            38
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0007903974227152647
+        }
+      ],
+      "usage_seconds": 168.0,
+      "qpu_charge_time_seconds": 168,
+      "circuits_execution_time_ns": 164504814848,
+      "timestamps": {
+        "created": "2026-10-22T21:28:44.229451Z",
+        "finished": "2026-10-23T06:00:50.241617Z",
+        "running": "2026-10-23T05:33:22.262733Z"
+      }
+    },
+    {
+      "name": "kingston52_rep3",
+      "job_id": "dbd805k24mrc73ckuo8g",
+      "backend": "ibm_kingston",
+      "options": {
+        "dynamical_decoupling": {
+          "enable": true,
+          "sequence_type": "XpXm"
+        },
+        "twirling": {
+          "enable_gates": true,
+          "enable_measure": true
+        },
+        "default_shots": 100000
+      },
+      "pubs": [
+        {
+          "label": "kingston52_heavyhex_G1.0",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.0,
+          "bond_length": 1.0975135,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.27018733,
+          "e_rhf": -108.95415347171252,
+          "e_ccsd": -109.26337534926421,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1624,
+          "isa_duration_us": 14.14800000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0019722926478112223
+        },
+        {
+          "label": "kingston52_heavyhex_G1.5",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 1.5,
+          "bond_length": 1.6462702500000002,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -109.05298919,
+          "e_rhf": -108.5605748072625,
+          "e_ccsd": -109.01234468263017,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 424,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1644,
+          "isa_duration_us": 14.180000000000039,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.0018118364676007787
+        },
+        {
+          "label": "kingston52_heavyhex_G2.2",
+          "arm": "kingston52_heavyhex",
+          "system": "n2_ccpvdz_26o",
+          "grid": 2.2,
+          "bond_length": 2.4145297,
+          "norb": 26,
+          "nelec": [
+            5,
+            5
+          ],
+          "e_hci": -108.94618072,
+          "e_rhf": -108.1483836661309,
+          "e_ccsd": -108.95697396389731,
+          "ccsd_route": "cold",
+          "n_pairs_ab": 3,
+          "isa_depth": 422,
+          "isa_2q_depth": 104,
+          "isa_2q_count": 1616,
+          "isa_duration_us": 14.18000000000004,
+          "isa_qubits_used": 54,
+          "auxiliary_qubits": 2,
+          "physical_qubits": [
+            55,
+            59,
+            75,
+            74,
+            73,
+            79,
+            93,
+            92,
+            91,
+            98,
+            111,
+            110,
+            109,
+            118,
+            129,
+            128,
+            127,
+            126,
+            125,
+            117,
+            105,
+            106,
+            107,
+            97,
+            87,
+            88,
+            53,
+            52,
+            51,
+            58,
+            71,
+            70,
+            69,
+            68,
+            67,
+            57,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            36,
+            21,
+            22,
+            23,
+            16,
+            3,
+            2,
+            1,
+            0
+          ],
+          "pairs_ab": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "effective_pairs_ab": [
+            0,
+            4
+          ],
+          "valid_fraction_model": 0.001933345640941901
+        }
+      ],
+      "usage_seconds": 85.0,
+      "qpu_charge_time_seconds": 85,
+      "circuits_execution_time_ns": 82504525056,
+      "timestamps": {
+        "created": "2026-10-22T21:28:55.877066Z",
+        "finished": "2026-10-22T21:36:47.599629Z",
+        "running": "2026-10-22T21:32:30.859324Z"
+      }
+    }
+  ]
+}

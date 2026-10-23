@@ -1,0 +1,33 @@
+{
+ "grid": 1.0,
+ "angstrom": 1.0975135,
+ "source": "kingston52_rep3__kingston52_heavyhex_G1.0",
+ "max_dim": 1200,
+ "d": 1440000,
+ "settings": {
+  "samples_per_batch": 1500,
+  "num_batches": 3,
+  "max_iterations": 5
+ },
+ "shots": 100000,
+ "initial_occupancies": null,
+ "valid_fraction": 0.01063,
+ "random_valid_fraction": 9.607888706852918e-07,
+ "e_hci": -109.27018733,
+ "error_vs_hci_mha": 16.725577793408775,
+ "error_vs_hci_by_round_mha": [
+  62.75350257291734,
+  25.722009756634634,
+  21.75981230638513,
+  18.80194055839013,
+  16.725577793408775
+ ],
+ "dim_by_round": [
+  1315609,
+  1440000,
+  1440000,
+  1440000,
+  1440000
+ ],
+ "seconds": 881.311108927941
+}

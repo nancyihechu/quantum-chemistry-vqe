@@ -117,7 +117,7 @@ def analyze_offline(jobs, shots: int = 100_000, caps=None, full: bool = False, a
     return analysis
 
 
-def analyze_manifest(manifest_path: Path, full: bool) -> None:
+def analyze_manifest(manifest_path: Path, full: bool, out_name: str = "analysis.json") -> None:
     manifest = json.loads(manifest_path.read_text())
     run_dir = manifest_path.parent
     system = SYSTEMS["n2_631g_16o"]
@@ -138,7 +138,7 @@ def analyze_manifest(manifest_path: Path, full: bool) -> None:
         analysis[r] = {"arms": {arm: [dict(sqd_by_cap(data, bits, e_fci), job=name) for name, bits, _ in runs]
                                 for arm, runs in arms.items()},
                        "baselines": baselines(data, e_fci, shots, full=full)}
-    (run_dir / "analysis.json").write_text(json.dumps(analysis, indent=1, default=str))
+    (run_dir / out_name).write_text(json.dumps(analysis, indent=1, default=str))
     print_table(analysis)
 
 
@@ -146,5 +146,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest")
     parser.add_argument("--full-baselines", action="store_true", help="also HCI and best-FCI (needs the FCI vector)")
+    parser.add_argument("--out", default="analysis.json", help="output file name inside the run directory")
     args = parser.parse_args()
-    analyze_manifest(Path(args.manifest), args.full_baselines)
+    analyze_manifest(Path(args.manifest), args.full_baselines, args.out)
