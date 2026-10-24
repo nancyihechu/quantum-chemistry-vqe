@@ -14,6 +14,7 @@ Commands:
                  build or submit (the pre-registration splits them over at least 2 days)
 
   --what shotscale  Addendum B2: arm E (phoenix square, 52 qubits) at grid 1.0 and 2.2, 5 jobs x 2M shots
+  --what kingstonscale  Addendum C: arm G (kingston heavy-hex, 52 qubits) at grid 2.2, 1M shots, 10-minute instance
 
 Circuits are rebuilt from results/hardware/design_frozen.json (scripts/freeze_design.py).
 
@@ -38,7 +39,10 @@ from qiskit import qpy
 from qchem_sqd.backends import offline_backend, save_snapshot, service_for
 from qchem_sqd.ccpvdz_arms import DESIGN_FILE as CCPVDZ_DESIGN_FILE
 from qchem_sqd.ccpvdz_arms import build_arms as build_ccpvdz_arms
-from qchem_sqd.ccpvdz_arms import SHOTSCALE_GRIDS, CALIBRATION_FILE, calibrated_phoenix_shots, ccpvdz_jobs, shotscale_jobs
+from qchem_sqd.ccpvdz_arms import (
+    KINGSTONSCALE_GRID, SHOTSCALE_GRIDS, CALIBRATION_FILE, calibrated_phoenix_shots, ccpvdz_jobs, kingstonscale_jobs,
+    shotscale_jobs,
+)
 from qchem_sqd.ccpvdz_arms import pilot_jobs as ccpvdz_pilot_jobs
 from qchem_sqd.hardware import (
     BOND_LENGTHS, DESIGN_FILE, PILOT_BOND_LENGTHS, REPEATS, JobSpec, build_arms, estimate_qpu_seconds, study_jobs,
@@ -46,7 +50,7 @@ from qchem_sqd.hardware import (
 
 RESULTS = Path(__file__).resolve().parents[1] / "results"
 INSTANCES = {"pilot": "Quantum Computation and Cryptography", "study": "Ligand Based Drug Discovery",
-             "shotscale": "Ligand Based Drug Discovery"}
+             "shotscale": "Ligand Based Drug Discovery", "kingstonscale": "Quantum Computation and Cryptography"}
 
 
 def load_fci() -> dict:
@@ -64,6 +68,8 @@ def build_jobs(what: str, instance: str, get_backend, shots: int, repeats, requi
     phoenix, kingston = get_backend("ibm_phoenix"), get_backend("ibm_kingston")
     if what == "shotscale":  # Addendum B2: arm E only, grid 1.0 and 2.2, 5 jobs x 2M shots
         return shotscale_jobs(build_ccpvdz_arms(phoenix, kingston, design52, grids=SHOTSCALE_GRIDS), instance)
+    if what == "kingstonscale":  # Addendum C: arm G only, grid 2.2, 1M shots in one job
+        return kingstonscale_jobs(build_ccpvdz_arms(phoenix, kingston, design52, grids=(KINGSTONSCALE_GRID,)), instance)
     bond_lengths = PILOT_BOND_LENGTHS if what == "pilot" else BOND_LENGTHS
     arms = build_arms(phoenix, kingston, design, bond_lengths, fci=load_fci())
     if what == "pilot":
@@ -195,7 +201,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["plan", "test", "submit", "fetch", "calibrate"])
     parser.add_argument("target", nargs="?", help="manifest.json for fetch or calibrate")
-    parser.add_argument("--what", choices=["pilot", "study", "shotscale"], default="study")
+    parser.add_argument("--what", choices=["pilot", "study", "shotscale", "kingstonscale"], default="study")
     parser.add_argument("--instance", help="override the default instance for --what")
     parser.add_argument("--shots", type=int, default=100_000)
     parser.add_argument("--repeats", type=int, nargs="+", help="study repeats to build/submit (plan: all 5)")
@@ -222,7 +228,7 @@ def main() -> None:
             bad = sum(check_isa(p, get_offline(job.backend_name)) for p in job.pubs)
             print(f"  {job.name:16s} {'OK' if not bad else f'{bad} unsupported operations'}")
         from analyze_sqd import analyze_offline  # noqa: E402  (scripts/ is on sys.path)
-        if args.what == "shotscale":
+        if args.what in ("shotscale", "kingstonscale"):
             print("(52-qubit circuits cannot be simulated noiselessly; analysis is tested on hardware data instead)")
         else:
             analyze_offline(jobs, full=args.full_baselines, all_bond_lengths=args.all_bond_lengths)

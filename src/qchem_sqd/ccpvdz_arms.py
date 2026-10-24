@@ -185,3 +185,17 @@ def shotscale_jobs(arms: dict, instance: str, n_jobs: int = SHOTSCALE_JOBS,
         raise RuntimeError("shot-scaling run needs arm E at grid 1.0 and 2.2")
     options = {**SAMPLER_OPTIONS, "default_shots": shots_per_job}
     return [JobSpec(f"shotscale_phoenix52_part{k}", instance, "ibm_phoenix", options, pubs) for k in range(1, n_jobs + 1)]
+
+
+KINGSTONSCALE_GRID = 2.2
+KINGSTONSCALE_SHOTS = 1_000_000
+
+
+def kingstonscale_jobs(arms: dict, instance: str, shots: int = KINGSTONSCALE_SHOTS) -> list:
+    """Pre-registered (Addendum C) kingston run: arm G at grid 2.2, 1M shots in one job."""
+    from .hardware import SAMPLER_OPTIONS, JobSpec
+
+    pubs = [p for p in arms["kingston52_heavyhex"] if p.meta["grid"] == KINGSTONSCALE_GRID]
+    if len(pubs) != 1:
+        raise RuntimeError("kingston run needs arm G at grid 2.2")
+    return [JobSpec("kingstonscale_kingston52", instance, "ibm_kingston", {**SAMPLER_OPTIONS, "default_shots": shots}, pubs)]
