@@ -106,3 +106,34 @@ Noise-model check: at 16 qubits the gate-and-readout model agrees with exact Aer
 2. 2026-10-23. Study day 1 was submitted as one session on 2026-10-22 (21:26 UTC). The ibm_kingston jobs ran immediately (21:26 to 21:33 UTC, 2026-10-22), but the ibm_phoenix jobs waited in the device queue and ran at 05:33 UTC on 2026-10-23, about 8 hours later and on the next calendar day. Consequences: within-phoenix comparisons (H1, H5; arms interleaved in each job) are unaffected; phoenix versus kingston comparisons (H3, H4, B versus D) use data from different calibration windows, which is reported alongside those results. Repeats 4 and 5 will be submitted no earlier than 2026-10-24 so that they fall on a day distinct from both day-1 execution dates. No analysis setting changes. Usage matching held: 52-qubit usage per circuit was 28.0 s on phoenix and 28.3 s on kingston (ratio 0.99).
 
 Addendum A (2026-10-23): torino reference through our pipeline at grid 2.2, d = 4M = 43.0 mHa above the repository HCI energy (job 19206070). Fills footnote (a); no other change.
+
+## Addendum B (2026-10-24, written before any data from repeats 4 and 5 were fetched or viewed)
+
+Disclosure: this addendum was drafted after the day-1 interim results (repeats 1 to 3) had been seen. Those results showed small paired differences for H1, H3, H4 and H5, which is why equivalence tests are added here. No data from repeats 4 and 5 had been fetched or analyzed when this addendum was committed; its git commit time is the reference. The existing hypotheses, settings and decision rules are unchanged; this adds tests and one experiment.
+
+### B1. Equivalence tests (in addition to the existing superiority rule)
+
+- Applies to H1 (A versus B, 32 qubits, 1.0 and 1.2 A), H3 (E versus G at matched QPU time, 52 qubits), H4 (E subsampled to 1e5 shots versus G) and H5 (E versus F), using all 5 repeats.
+- Test: two one-sided tests (TOST) on the per-repeat paired difference of final errors, alpha = 0.05, t distribution with 4 degrees of freedom. Equivalence is concluded at a geometry and cap when the 90% confidence interval of the mean paired difference lies entirely inside (-delta, +delta).
+- Margins: delta = 5 mHa for the 52-qubit comparisons (H3, H4, H5); delta = 10 mHa for the 32-qubit comparison (H1). Rationale: 5 mHa is about three times chemical accuracy (1.6 mHa) and well below the 10 to 50 mHa errors of every arm at these subspace sizes; the 32-qubit margin is wider because the 32-qubit errors and their repeat-to-repeat spread are about twice as large.
+- Aggregation, mirroring the existing rule: equivalence for a hypothesis at a geometry requires equivalence at a majority of caps (32 qubits: 3 of 5; 52 qubits: both d = 1.44M and 4M).
+- Each comparison is reported as one of: superiority (existing rule), equivalence (this rule), or inconclusive. Both rules are always reported; neither replaces the other.
+
+### B2. Phoenix shot-scaling run (52 qubits, exploratory)
+
+- Circuit: arm E (ibm_phoenix, square pattern, frozen design in `results/hardware/design_ccpvdz_frozen.json`) at grid 1.0 and 2.2, rebuilt with the same frozen procedure (1 thread), same twirling and dynamical decoupling.
+- Shots: 10,000,000 per grid value, submitted as 5 jobs of 2,000,000 shots per grid value, each job holding both grid values interleaved (4,000,000 executions per job, comparable to the 6,240,000 of the day-1 phoenix jobs). Instance: "Ligand Based Drug Discovery".
+- Cost: 20,000,000 shots at the IBM-reported day-1 rate of 26.92 microseconds per shot (168 s per 6,240,000 shots) = 538 s; at the pilot rate of 28.93 microseconds per shot it would be 579 s. Expected 538 s, upper estimate 579 s.
+- Analysis: pool the 5 jobs per grid value, then subsample without replacement to 0.1M, 0.3M, 1M, 3M and 10M shots (10M = all shots). For each size below 10M, 3 independent subsamples with numpy default_rng seeds 7, 8 and 9. SQD with the frozen 52-qubit settings at d = 1.44M and 4M. Reported: error versus the repository HCI energy before recovery and after each round, valid shots, mean and spread over the 3 subsamples, plotted against shot count. No hypothesis test; the result is described as exploratory.
+
+### B3. Reproduction gap (reported; no change to any analysis)
+
+qiskit-addon-sqd 0.1.0, used for the published results, is not publicly available; 0.3.0 (earliest public release) is used as a proxy. Errors versus HCI in mHa at d up to 1.44M on the published ibm_torino shots:
+
+| Grid | Published | 0.3.0, 600 per batch, 3 batches | 0.3.0, 600 per batch, 10 batches | 0.14.0, 600 per batch | 0.14.0, 1500 per batch |
+|---|---|---|---|---|---|
+| 1.0 | 45.5 | 83.9 | 81.2 | 36.4 | 21.1 |
+| 2.2 | 201.8 | 272.8 | 213.8 | 88.6 | 75.9 |
+
+Breakdown of the gap between the published value and our pipeline (0.14.0, 1500 per batch): version effect (0.3.0 minus 0.14.0 at 600 per batch) +45 to +48 mHa at grid 1.0 and +125 to +184 mHa at grid 2.2; samples-per-batch effect (600 minus 1500 within 0.14.0) +15.3 and +12.8 mHa; residual (published minus 0.3.0) -36 to -39 and -12 to -71 mHa. Caveat: 0.3.0 at 600 samples per batch reached subspaces of about 0.9M to 1.09M, not 1.44M, which accounts for part of the negative residual. Most of the gap is attributable to algorithm changes between versions (carry-over and subspace caps), not to samples per batch.
+
