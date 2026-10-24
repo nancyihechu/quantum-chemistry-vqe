@@ -54,13 +54,15 @@ def main() -> None:
     parser.add_argument("--shots", type=int, help="random only; default = torino shot count")
     parser.add_argument("--seed", type=int, default=SEEDS["random_bitstrings"])
     parser.add_argument("--subsample", type=int, help="keep a fixed random subset of this many shots (matched-shot comparison)")
+    parser.add_argument("--subsample-seed", type=int, default=SEEDS["sampler"], help="numpy default_rng seed for --subsample (default 7)")
     args = parser.parse_args()
 
     data = fs.load(args.grid)
     bits, label = load_source(args.source, args.grid, args.shots, args.seed)
     if args.subsample and args.subsample < bits.num_shots:
-        keep = np.sort(np.random.default_rng(SEEDS["sampler"]).choice(bits.num_shots, args.subsample, replace=False))
-        bits, label = BitArray(bits.array[keep], bits.num_bits), f"{label}_sub{args.subsample}"
+        keep = np.sort(np.random.default_rng(args.subsample_seed).choice(bits.num_shots, args.subsample, replace=False))
+        seed_tag = "" if args.subsample_seed == SEEDS["sampler"] else f"_s{args.subsample_seed}"
+        bits, label = BitArray(bits.array[keep], bits.num_bits), f"{label}_sub{args.subsample}{seed_tag}"
     hci = fs.reference_energies()[args.grid]["hci"]
     t0 = time.perf_counter()
     rhf = np.array([1.0] * data.nelec[0] + [0.0] * (data.norb - data.nelec[0]))

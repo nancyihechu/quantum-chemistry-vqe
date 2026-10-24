@@ -164,3 +164,24 @@ def pilot_jobs(arms: dict, instance: str, phoenix, kingston, grid: float = 1.0) 
         JobSpec("pilot_kingston52", instance, "ibm_kingston", {**SAMPLER_OPTIONS, "default_shots": KINGSTON_SHOTS},
                 pick("kingston52_heavyhex")),
     ]
+
+
+SHOTSCALE_GRIDS = (1.0, 2.2)
+SHOTSCALE_JOBS = 5
+SHOTSCALE_SHOTS_PER_JOB = 2_000_000
+
+
+def shotscale_jobs(arms: dict, instance: str, n_jobs: int = SHOTSCALE_JOBS,
+                   shots_per_job: int = SHOTSCALE_SHOTS_PER_JOB) -> list:
+    """Pre-registered (Addendum B2) phoenix shot-scaling run: arm E at grid 1.0 and 2.2.
+
+    n_jobs jobs, each holding both grid values interleaved at shots_per_job shots per circuit,
+    so the pooled data have n_jobs x shots_per_job shots per grid value (10M by default).
+    """
+    from .hardware import SAMPLER_OPTIONS, JobSpec
+
+    pubs = [p for p in arms["phoenix52_square"] if p.meta["grid"] in SHOTSCALE_GRIDS]
+    if sorted(p.meta["grid"] for p in pubs) != sorted(SHOTSCALE_GRIDS):
+        raise RuntimeError("shot-scaling run needs arm E at grid 1.0 and 2.2")
+    options = {**SAMPLER_OPTIONS, "default_shots": shots_per_job}
+    return [JobSpec(f"shotscale_phoenix52_part{k}", instance, "ibm_phoenix", options, pubs) for k in range(1, n_jobs + 1)]
