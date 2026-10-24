@@ -105,6 +105,8 @@ Noise-model check: at 16 qubits the gate-and-readout model agrees with exact Aer
 
 2. 2026-10-23. Study day 1 was submitted as one session on 2026-10-22 (21:26 UTC). The ibm_kingston jobs ran immediately (21:26 to 21:33 UTC, 2026-10-22), but the ibm_phoenix jobs waited in the device queue and ran at 05:33 UTC on 2026-10-23, about 8 hours later and on the next calendar day. Consequences: within-phoenix comparisons (H1, H5; arms interleaved in each job) are unaffected; phoenix versus kingston comparisons (H3, H4, B versus D) use data from different calibration windows, which is reported alongside those results. Repeats 4 and 5 will be submitted no earlier than 2026-10-24 so that they fall on a day distinct from both day-1 execution dates. No analysis setting changes. Usage matching held: 52-qubit usage per circuit was 28.0 s on phoenix and 28.3 s on kingston (ratio 0.99).
 
+3. 2026-10-24. Order change for the Addendum B2 shot-scaling run. B2 was planned to be submitted after the day-2 data (repeats 4 and 5) had been fetched. Because ibm_phoenix has scheduled maintenance on 2026-10-27, and the shot-scaling run does not use or depend on day-2 data, it is submitted now, while the day-2 phoenix jobs are still queued. Effects: none on any analysis or setting; the shot-scaling jobs and the day-2 phoenix jobs may run in either order and in different calibration windows, which is recorded from the execution timestamps. Day-2 data had still not been fetched or viewed when this was committed.
+
 Addendum A (2026-10-23): torino reference through our pipeline at grid 2.2, d = 4M = 43.0 mHa above the repository HCI energy (job 19206070). Fills footnote (a); no other change.
 
 ## Addendum B (2026-10-24, written before any data from repeats 4 and 5 were fetched or viewed)
@@ -136,4 +138,11 @@ qiskit-addon-sqd 0.1.0, used for the published results, is not publicly availabl
 | 2.2 | 201.8 | 272.8 | 213.8 | 88.6 | 75.9 |
 
 Breakdown of the gap between the published value and our pipeline (0.14.0, 1500 per batch): version effect (0.3.0 minus 0.14.0 at 600 per batch) +45 to +48 mHa at grid 1.0 and +125 to +184 mHa at grid 2.2; samples-per-batch effect (600 minus 1500 within 0.14.0) +15.3 and +12.8 mHa; residual (published minus 0.3.0) -36 to -39 and -12 to -71 mHa. Caveat: 0.3.0 at 600 samples per batch reached subspaces of about 0.9M to 1.09M, not 1.44M, which accounts for part of the negative residual. Most of the gap is attributable to algorithm changes between versions (carry-over and subspace caps), not to samples per batch.
+
+## Addendum C (2026-10-24, written before any data from repeats 4 and 5 were fetched or viewed)
+
+- One additional exploratory kingston run: arm G (ibm_kingston, heavy-hex pattern, frozen 52-qubit design in `results/hardware/design_ccpvdz_frozen.json`) at grid 2.2, 1,000,000 shots in one job, rebuilt with the frozen procedure (1 thread), same twirling and dynamical decoupling. Instance: "Quantum Computation and Cryptography".
+- Purpose: a kingston 52-qubit data set with a shot count comparable to the phoenix runs, at the stretched geometry, to place next to the B2 phoenix shot-scaling curve.
+- Cost: 1,000,000 shots at the IBM-reported day-1 kingston rate of 283.3 microseconds per shot (85 s per 300,000 shots) = 283 s; at the pilot rate of 300.0 microseconds per shot, 300 s. The instance had 454 s remaining.
+- Analysis: subsample without replacement to 0.1M and 0.3M shots (numpy default_rng seeds 7, 8, 9) and use all 1M, at d = 1.44M and 4M, with the frozen 52-qubit settings. Reported: error versus the repository HCI energy before recovery and after each round, valid shots, mean and spread over the 3 subsamples. No hypothesis test; exploratory.
 
