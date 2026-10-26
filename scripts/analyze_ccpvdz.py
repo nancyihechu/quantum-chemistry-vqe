@@ -27,7 +27,7 @@ from qiskit_addon_sqd.counts import generate_bit_array_uniform, generate_counts_
 
 from qchem_sqd import fcidump_system as fs
 from qchem_sqd.repro import SEEDS
-from qchem_sqd.sqd import random_valid_fraction, run_sqd, valid_fraction
+from qchem_sqd.sqd import random_valid_fraction, run_sqd, valid_fraction, valid_mask
 
 OUT = Path(__file__).resolve().parents[1] / "results" / "ccpvdz"
 SQD_SETTINGS = {"samples_per_batch": 1500, "num_batches": 3, "max_iterations": 5}
@@ -37,11 +37,12 @@ def load_source(source: str, grid: float, shots: int | None, seed: int) -> tuple
     if source == "torino":
         return fs.torino_bit_array(grid), "torino"
     n = shots or fs.torino_bit_array(grid).num_shots
+    shots_tag = f"_n{shots}" if shots else ""  # default (torino shot count) keeps the original file names
     if source == "random_hfinit":
-        return generate_bit_array_uniform(n, 52, rand_seed=seed), f"random_hfinit_seed{seed}"
+        return generate_bit_array_uniform(n, 52, rand_seed=seed), f"random_hfinit_seed{seed}{shots_tag}"
     if source == "random_particle":
         counts = generate_counts_bipartite_hamming(n, 52, hamming_right=5, hamming_left=5, rand_seed=seed)
-        return BitArray.from_counts(counts), f"random_particle_seed{seed}"
+        return BitArray.from_counts(counts), f"random_particle_seed{seed}{shots_tag}"
     z = np.load(source)
     return BitArray(z["array"], int(z["num_bits"])), Path(source).stem
 
@@ -54,6 +55,7 @@ def main() -> None:
     parser.add_argument("--shots", type=int, help="random only; default = torino shot count")
     parser.add_argument("--seed", type=int, default=SEEDS["random_bitstrings"])
     parser.add_argument("--subsample", type=int, help="keep a fixed random subset of this many shots (matched-shot comparison)")
+    parser.add_argument("--subsample-valid", type=int, help="H6: shuffle shots (rng --subsample-seed) and keep the shortest prefix holding this many valid shots")
     parser.add_argument("--subsample-seed", type=int, default=SEEDS["sampler"], help="numpy default_rng seed for --subsample (default 7)")
     args = parser.parse_args()
 
@@ -63,6 +65,13 @@ def main() -> None:
         keep = np.sort(np.random.default_rng(args.subsample_seed).choice(bits.num_shots, args.subsample, replace=False))
         seed_tag = "" if args.subsample_seed == SEEDS["sampler"] else f"_s{args.subsample_seed}"
         bits, label = BitArray(bits.array[keep], bits.num_bits), f"{label}_sub{args.subsample}{seed_tag}"
+    if args.subsample_valid:
+        order = np.random.default_rng(args.subsample_seed).permutation(bits.num_shots)
+        valid_in_order = np.cumsum(valid_mask(bits, data.norb, data.nelec)[order])
+        if valid_in_order[-1] < args.subsample_valid:
+            raise SystemExit(f"only {valid_in_order[-1]} valid shots, {args.subsample_valid} requested")
+        n_keep = int(np.searchsorted(valid_in_order, args.subsample_valid)) + 1
+        bits, label = BitArray(bits.array[np.sort(order[:n_keep])], bits.num_bits), f"{label}_vsub{args.subsample_valid}"
     hci = fs.reference_energies()[args.grid]["hci"]
     t0 = time.perf_counter()
     rhf = np.array([1.0] * data.nelec[0] + [0.0] * (data.norb - data.nelec[0]))

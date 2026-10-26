@@ -3,6 +3,7 @@
 from math import comb
 
 import ffsim
+import numpy as np
 from pyscf import ao2mo
 from qiskit.primitives import BitArray
 from qiskit_addon_sqd.fermion import diagonalize_fermionic_hamiltonian
@@ -69,7 +70,12 @@ def random_valid_fraction(norb: int, nelec: tuple[int, int]) -> float:
 
 def valid_fraction(bit_array: BitArray, norb: int, nelec: tuple[int, int]) -> float:
     """Fraction of shots with the correct alpha and beta electron counts (a noise diagnostic)."""
+    return float(valid_mask(bit_array, norb, nelec).mean())
+
+
+def valid_mask(bit_array: BitArray, norb: int, nelec: tuple[int, int]) -> np.ndarray:
+    """Per-shot flag: correct alpha and beta electron counts."""
     bits = bit_array.to_bool_array(order="little")
     n_alpha = bits[:, :norb].sum(axis=1)
     n_beta = bits[:, norb : 2 * norb].sum(axis=1)
-    return float(((n_alpha == nelec[0]) & (n_beta == nelec[1])).mean())
+    return (n_alpha == nelec[0]) & (n_beta == nelec[1])
