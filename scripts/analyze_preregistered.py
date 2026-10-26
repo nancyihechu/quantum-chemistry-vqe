@@ -253,8 +253,11 @@ def section_52(result) -> None:
         for rnd in ("random_hfinit", "random_particle"):
             run_pair(f"H6 {k} minus {rnd} ({n:,} shots)", lambda g, d, k=k: arm_runs(k, g, d),
                      lambda g, d, rnd=rnd, n=n: load_json(f"sqd_{rnd}_seed101_n{n}_R{g}_d{d}.json"), GRIDS)
-        nvalid = {g: round(load_json(f"sqd_torino_R{g}_d1200.json")["shots"] * load_json(f"sqd_torino_R{g}_d1200.json")["valid_fraction"]) for g in GRIDS}
+        torino = {g: load_json(f"sqd_torino_R{g}_d1200.json") for g in GRIDS}
+        nvalid = {g: round(t["shots"] * t["valid_fraction"]) for g, t in torino.items()}
         run_pair(f"H6 {k} (subsampled to T's valid shots) minus T", lambda g, d, k=k: arm_runs(k, g, d, f"_vsub{nvalid[g]}"),
+                 lambda g, d: load_json(f"sqd_torino_R{g}_d{d}.json"), GRIDS)
+        run_pair(f"H6 {k} (subsampled to T's total shots) minus T", lambda g, d, k=k: arm_runs(k, g, d, f"_sub{torino[g]['shots']}"),
                  lambda g, d: load_json(f"sqd_torino_R{g}_d{d}.json"), GRIDS)
 
     print("\nValid shots per QPU second (IBM-reported usage per circuit = job usage / circuits in job)")
