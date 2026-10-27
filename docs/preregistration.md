@@ -154,3 +154,48 @@ Breakdown of the gap between the published value and our pipeline (0.14.0, 1500 
 - Cost: 1,000,000 shots at the IBM-reported day-1 kingston rate of 283.3 microseconds per shot (85 s per 300,000 shots) = 283 s; at the pilot rate of 300.0 microseconds per shot, 300 s. The instance had 454 s remaining.
 - Analysis: subsample without replacement to 0.1M and 0.3M shots (numpy default_rng seeds 7, 8, 9) and use all 1M, at d = 1.44M and 4M, with the frozen 52-qubit settings. Reported: error versus the repository HCI energy before recovery and after each round, valid shots, mean and spread over the 3 subsamples. No hypothesis test; exploratory.
 
+
+## Results (2026-10-27, all 5 repeats; written after every analysis below had been run)
+
+Source: `scripts/analyze_preregistered.py`, output `results/hardware/analysis_preregistered.json` (commit 4a1907a). Errors in mHa; differences are first arm minus second, per repeat, mean +/- SE over n = 5; 90% CI from t with 4 degrees of freedom. Verdicts follow the Decision rule and Addendum B1 (supported, equivalent, inconclusive, or opposite). No run was excluded and no job failed.
+
+### System 1 (32 qubits)
+
+| Comparison | 1.0 A | 1.2 A | 1.8 A | 2.4 A |
+|---|---|---|---|---|
+| H1 (primary): A minus B | equivalent | equivalent | (exploratory) inconclusive | (exploratory) equivalent |
+| Exploratory B minus D (device) | equivalent | equivalent | equivalent | equivalent |
+| Exploratory C minus A (optimized angles) | supported | inconclusive | not run | not run |
+| H2 (valid fraction and before-recovery error) | pass, all arms | pass, all arms | pass, all arms | pass, all arms |
+
+- H1 is not supported. At 1.0 A the paired difference ranges from -3.9 +/- 3.5 (d = 60) to +1.7 +/- 0.5 (d = 200, opposite sign); at 1.2 A from -7.2 +/- 2.1 (d = 30, the only cap meeting the superiority rule) to +1.2 +/- 1.7. The noiseless prediction (A about 45 mHa below B at 1.0 A, d = 60) did not appear on hardware.
+- C minus A at 1.0 A meets the superiority rule at d = 60 (-7.6 +/- 2.5), 100 (-5.3 +/- 2.4) and 150 (-1.3 +/- 0.5), not at d = 30 (+1.8 +/- 5.9) or 200 (-0.7 +/- 1.2). Exploratory.
+- H2: valid fractions 9.3% to 16.4% in every repeat of every arm (threshold 4.44%); before-recovery errors 73 to 184 mHa against 521 to 2031 mHa for random.
+
+### System 2 (52 qubits)
+
+| Comparison | grid 1.0 | grid 1.5 | grid 2.2 |
+|---|---|---|---|
+| H3 (primary): E minus G, matched QPU time | equivalent | equivalent | inconclusive |
+| H4 (primary): E at 1e5 shots minus G | equivalent | equivalent | equivalent |
+| H5: E minus F (1.5 and 2.2 exploratory) | equivalent | equivalent | inconclusive |
+| H6: E, F, G minus random_particle | supported (all) | supported (all) | supported (all) |
+| H6: E, F, G minus random_hfinit | E, F inconclusive; G equivalent | E, F supported; G equivalent | supported (all) |
+| H6: arms minus T, matched valid shots (Deviation 5a) | E, F equivalent; G inconclusive | supported (all) | supported (all) |
+| H6: arms minus T, matched total shots (Deviation 5b) | E equivalent; F, G supported | supported (all) | supported (all) |
+
+- H3 and H4 are not supported. Every paired difference lies within 3.1 mHa of zero; the only superiority flag is H3 at grid 2.2, d = 4M (-3.1 +/- 1.4), with d = 1.44M equivalent (+0.3 +/- 0.7).
+- H5 is not supported at grid 1.0 (+0.1 +/- 1.0 and -0.3 +/- 0.5, equivalent).
+- H6 is supported against random_particle (arms 216 to 438 mHa better) and against T at grids 1.5 and 2.2 (9 to 29 mHa better under either matching). It is not supported against random_hfinit at grid 1.0, where E and F are 4.3 +/- 0.5 and 4.2 +/- 0.7 mHa worse than random_hfinit at d = 1.44M (opposite sign) and equivalent at d = 4M; G is equivalent to random_hfinit at grids 1.0 and 1.5.
+- Throughput: 390 to 406 valid shots per QPU second on phoenix (E, F) against 34 to 35 on kingston (G), about 11 times; the model predicted 64 to 78 and 5.5 to 6.7, because measured valid fractions (0.96% to 1.09%) were about 5 to 10 times the model's (Paper notes: idle term).
+- Day effects (day 1 minus day 2 mean of the paired difference) are within +/- 8.2 mHa for every 52-qubit comparison and within +/- 20 mHa for the 32-qubit A versus B, B versus D and C versus A comparisons except at d = 30 and 60 at 2.4 A (up to 77 mHa), where per-repeat spread is also largest.
+
+### Shot scaling (exploratory, Addenda B2 and C)
+
+Final error after recovery changes little from 1e5 to 1e7 shots: E at grid 1.0, 17.5 to 20.1 mHa (d = 1.44M) and 8.4 to 10.8 mHa (d = 4M); E at grid 2.2, 44.4 to 46.3 and 22.5 to 25.1 mHa; G at grid 2.2 (1e5 to 1e6 shots), 43.3 to 47.3 and 24.6 to 25.9 mHa. Before-recovery errors fall by 6 to 21 mHa from 1e5 to 1e6 shots, with no consistent trend beyond.
+
+### Answers to the three questions
+
+1. No. At fixed subspace size, square-pattern LUCJ samples did not give lower SQD errors than the heavy-hex pattern on the same chip, at 32 or 52 qubits; most comparisons are equivalent within the pre-set margins.
+2. No. At matched QPU time, phoenix collected about 11 times more valid shots than kingston, but the final SQD errors were equivalent at grids 1.0 and 1.5 and inconclusive at 2.2, consistent with the shot-scaling result that the final error barely improves beyond 1e5 shots.
+3. Partly. Hardware samples beat particle-number-conserving random strings by a wide margin everywhere, and beat uniform strings with HF-seeded recovery at stretched bonds (grid 1.5 and 2.2 for E and F, 2.2 for G), but not near equilibrium (grid 1.0).
