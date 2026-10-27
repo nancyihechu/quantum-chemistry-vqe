@@ -1,0 +1,33 @@
+{
+ "grid": 2.2,
+ "angstrom": 2.4145297,
+ "source": "pooled_phoenix52_square_G2.2_sub300000",
+ "max_dim": 2000,
+ "d": 4000000,
+ "settings": {
+  "samples_per_batch": 1500,
+  "num_batches": 3,
+  "max_iterations": 5
+ },
+ "shots": 300000,
+ "initial_occupancies": null,
+ "valid_fraction": 0.01409,
+ "random_valid_fraction": 9.607888706852918e-07,
+ "e_hci": -108.94618072,
+ "error_vs_hci_mha": 24.60966270679421,
+ "error_vs_hci_by_round_mha": [
+  88.82040471439723,
+  50.98589149903887,
+  35.56912245512933,
+  29.22561040452365,
+  24.60966270679421
+ ],
+ "dim_by_round": [
+  2825761,
+  3265249,
+  4000000,
+  4000000,
+  4000000
+ ],
+ "seconds": 11880.13591719186
+}
